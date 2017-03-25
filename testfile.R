@@ -5,3 +5,7 @@ runif(5, 0, 1)
 #MOAR CHANGES
 # Oh yes
 library(ggplot2) #because it#s awesomeeee
+
+# Add in some Owen-y stuff
+library(dplyr)
+library(RCurl)
