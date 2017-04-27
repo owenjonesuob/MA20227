@@ -3,8 +3,8 @@ title: "\"Draw me like one of your French girls\""
 subtitle: "A report on (linear) modelling for films"
 author:
 - Group 25
-- Owen Jones (olj23), Artem Yurlov (ay340),
-- Samuel Lewis (scl50), Dave Robjohns (dr474)
+- Owen Jones {olj23}, Artem Yurlov {ay340},
+- Samuel Lewis {scl50}, David Robjohns \{dr474\}@bath.ac.uk
 date: "Spring 2017"
 output:
   pdf_document: default
@@ -35,7 +35,11 @@ load("imdb.rda")
 
 We are ultimately interested in the relationship between the IMDb score (recorded as `score`) and the rest of the information which is available.
 
-Looking at the distribution of scores we can see the mean rating of the films in our dataset is between 6 and 7; this is a consequence of our tendency to treat 6 or 7 as an "average" film rating, rather than 5 (which would arguably be more logical from a mathematician's point of view!).
+```{r}
+summary(imdb$score)
+```
+
+Looking at the distribution of scores we can see the mean rating of the films in our dataset is between 6 and 7; this is a consequence of our tendency to treat 6 or 7 as an "average" film rating, rather than 5.5 (which would arguably be more logical from a mathematician's point of view!).
 
 It will also be useful to see the relationship between the score and each of the predictors which might be used in our models.
 
@@ -95,7 +99,8 @@ imdb$aspect[3539] <- 1.78
 Let's have a look at another plot which might reveal a potentially interesting relationship among some predictors.
 
 ```{r}
-plot(imdb$budget, imdb$gross, pch = 20, main = "Gross vs Budget")
+plot(imdb$budget, imdb$gross, pch = 20, main = "Gross vs Budget",
+     ylab = "Gross", xlab = "Budget")
 ```
 
 There is a smattering of outlying values in the plot. Further investigation reveals that one of these, the clear outlier in the bottom-right, is in fact another misentered value.
